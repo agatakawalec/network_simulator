@@ -5,20 +5,16 @@ import { Container, Row, Col } from 'react-grid-system';
 import './Main';
 
 
-export class Bts extends React.PureComponent {
+export class Bts extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            counterUE : this.props.state.counterUE,
-            counterBTS : this.props.state.counterBTS,
-        }
     }
 
     render() {
         let elements1=[];
         let elements2=[];
         let elements3=[];
-        for(var i=0; i<this.state.counterUE; ++i){
+        for(var i=0; i<this.props.state.counterUE; ++i){
             if(i<3){
                 elements3.push(<Col sm={4}>
                     <img src={phone} className="iconPhone" alt="logo" />
@@ -40,7 +36,7 @@ export class Bts extends React.PureComponent {
         }
 
         let btsKeeper = [];
-        for(var j = 0; j< this.state.counterBTS; ++j){
+        for(var j = 0; j< this.props.state.counterBTS; ++j){
             btsKeeper.push(<Col sm={4}>
                 <img src={logo} className="icon" alt="logo" />
             </Col>)

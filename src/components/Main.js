@@ -4,17 +4,17 @@ import {Bts} from "./Bts";
 import {Buttons} from "./Buttons";
 
 
-export class Main extends React.PureComponent {
+export class Main extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            counterUE : 5,
-            counterBTS : 3,
-        }
+            counterUE : 3,
+            counterBTS : 3
+        };
     }
 
     changeCounterUE = (n) => {
-        this.setState({counterUE: n})
+        this.setState({counterUE: n});
     }
 
     changeCounterBTS = (n) => {

@@ -13,7 +13,9 @@ export class Buttons extends React.PureComponent {
 
     addBTS = () => {
         let param = this.props.state.counterBTS + 1;
-        this.props.changeHandler2(param);
+        if(param < 4){
+            this.props.changeHandler2(param);
+        }
     }
 
     deleteBTS = () => {
@@ -34,13 +36,13 @@ export class Buttons extends React.PureComponent {
     render() {
         return (
             <>
-                <Button onClick = {() => this.props.changeHandler(this.props.state.counterUE + 1)} className = "oneButton" variant="primary">Dodaj BTS</Button>
+                <Button onClick = {this.addBTS} className = "oneButton" variant="primary">Dodaj BTS</Button>
                 <br/>
-                <Button className = "oneButton" variant="primary">Usuń BTS</Button>
+                <Button onClick = {this.deleteBTS} className = "oneButton" variant="primary">Usuń BTS</Button>
                 <br />
                 <Button onClick = {this.addUE} className = "oneButton" variant="primary">Dodaj UE</Button>
                 <br/>
-                <Button className = "oneButton" variant="primary">Usuń> UE</Button>
+                <Button onClick = {this.deleteUE} className = "oneButton" variant="primary">Usuń UE</Button>
             </>
         );
     }
