@@ -74,6 +74,21 @@ h2 {
   border-radius: 10px;
 }
 
+.oneText {
+  padding: 8px;
+}
+
+.miniButtonek {
+  background: indianred;
+  width: 40px;
+  height: 30px;
+  border-radius: 5px;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  margin: 10px
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

@@ -3,43 +3,48 @@ import logo from "../assets/bts.png";
 import phone from "../assets/smartphone.png";
 import accept from "../assets/acceptPhone.png";
 import decline from "../assets/declinePhone.png";
-import { Container, Row, Col } from 'react-grid-system';
+import { Container, Row, Col} from 'react-grid-system';
 import './Main';
 import {BTS} from "./BTS";
-import {Button} from "react-bootstrap";
 import {Call} from './Call';
+import Button from 'react-bootstrap/Button'
 
 export class ArrayOfElements extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            backInfo1: ["1st info"],
-            backInfo2: ["2nd info"],
-            backInfo3: ["3rd info"],
-        }
+            info11: '',
+            info12: '',
+            info13: '',
+            info21: '',
+            info22: '',
+            info23: '',
+            info31: '',
+            info32: '',
+            info33: '',
+            chosen1: 0,
+            chosen2: 0}
     }
 
     test = () => {
         console.log("HURRAA");
-    }
+    };
 
 
     render() {
         let elements1=[];
         let elements2=[];
         let elements3=[];
+
         for(var i=0; i<this.props.state.counterUE; ++i){
-            if(i<5){
+            if(i<4){
                 elements3.push(
                         <Col sm={3}>
                             <img src={phone} className="iconPhone" alt="logo" />
                             <h1>Phone {i+1}</h1>
                             <div className="infoContainer">
-                                <Call/>
+                                <Call number={i}/>
                             </div>
-                            <br/>
-                            <img src={accept} className="iconSmall" onClick={this.test} />
-                            <img src={decline} className="iconSmall" onClick={this.test} />
                         </Col>
                     );
             }

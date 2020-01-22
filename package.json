@@ -1,6 +1,7 @@
 {
   "name": "network_sim",
   "version": "0.1.0",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -36,6 +37,8 @@
     ]
   },
   "devDependencies": {
-    "react-grid-layout": "^0.17.1"
+    "@material-ui/core": "^4.8.3",
+    "react-grid-layout": "^0.17.1",
+    "semantic-ui-react": "^0.88.2"
   }
 }
