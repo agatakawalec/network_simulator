@@ -1,6 +1,6 @@
 import React from "react";
 import './../App.css';
-import {Bts} from "./Bts";
+import {ArrayOfElements} from "./ArrayOfElements";
 import {Buttons} from "./Buttons";
 
 
@@ -25,7 +25,7 @@ export class Main extends React.Component {
         return (
             <div className="container">
                 <div className="btsHandler">
-                    <Bts state = {this.state} changeHandler = {this.changeCounterUE} changeHandler2 = {this.changeCounterBTS}/>
+                    <ArrayOfElements state = {this.state} changeHandler = {this.changeCounterUE} changeHandler2 = {this.changeCounterBTS}/>
                 </div>
                 <div className="buttons">
                     <Buttons state = {this.state} changeHandler = {this.changeCounterUE} changeHandler2 = {this.changeCounterBTS}/>

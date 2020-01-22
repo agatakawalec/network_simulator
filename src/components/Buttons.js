@@ -1,6 +1,6 @@
 import React from "react";
 import Button from 'react-bootstrap/Button'
-import './Bts';
+import './ArrayOfElements';
 
 export class Buttons extends React.PureComponent {
     constructor(props) {
@@ -36,13 +36,9 @@ export class Buttons extends React.PureComponent {
     render() {
         return (
             <>
-                <Button onClick = {this.addBTS} className = "oneButton" variant="primary">Dodaj BTS</Button>
+                <Button onClick = {this.addUE} className = "oneButton" variant="primary">Dodaj Telefon</Button>
                 <br/>
-                <Button onClick = {this.deleteBTS} className = "oneButton" variant="primary">Usuń BTS</Button>
-                <br />
-                <Button onClick = {this.addUE} className = "oneButton" variant="primary">Dodaj UE</Button>
-                <br/>
-                <Button onClick = {this.deleteUE} className = "oneButton" variant="primary">Usuń UE</Button>
+                <Button onClick = {this.deleteUE} className = "oneButton" variant="primary">Usuń Telefon</Button>
             </>
         );
     }
