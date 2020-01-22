@@ -7,19 +7,47 @@ export class Call extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            taken: 0,
             id: this.props.number,
             backInfo1: "1st info",
             backInfo2: "2nd info",
             backInfo3: "3rd info",
-        }
+        };
         this.set1info = this.set1info.bind(this);
         this.set2info = this.set2info.bind(this);
         this.set3info = this.set3info.bind(this);
-    }
+    };
 
+    sleep = (milliseconds) => {
+        return new Promise(resolve => setTimeout(resolve, milliseconds))
+    };
 
+    newCall = (from, to) => {
+        this.set1info("Telefon łączy się.");
+        fetch('https://localhost:8080/call', {
+            method: 'POST',
+            headers : {Accept: 'application/json',
+                'Content-Type': 'application/json',},
+            body:JSON.stringify({from: from, to:to})
+        }).then((res) => res.json())
+            .then((res) =>  this.set2info(res))
+            .catch((err)=>console.log(err))
+    };
 
-            set1info = (info) => {
+    clearData = () => {
+        this.set1info(". ");
+        this.set2info(". ");
+        this.set3info(". ");
+        this.set2info("Trwa rozłączanie...")
+        this.sleep(1000).then(() => {
+            this.set1info(".");
+            this.set2info(". ");
+            this.set3info(". ");
+        });
+
+    };
+
+    set1info = (info) => {
         this.setState({backInfo1: info});
         console.log("jestem tuuu");
     };
@@ -34,10 +62,6 @@ export class Call extends React.Component {
 
     call = (from, to) => {
         console.log("call from " + JSON.stringify(from) + " to " + JSON.stringify(to));
-    };
-
-    accept = (id) => {
-        console.log("accept" + JSON.stringify(id));
     };
 
     decline = (id) => {
@@ -55,7 +79,6 @@ export class Call extends React.Component {
             <div>
                 <div className="oneText">
                     {this.state.backInfo1}
-                    {this.click}
                 </div>
                 <div className="oneText">
                     {this.state.backInfo2}
@@ -64,16 +87,13 @@ export class Call extends React.Component {
                     {this.state.backInfo3}
                 </div>
                 <br/>
-                <img src={decline} className="iconSmall" onClick={() => this.decline(id)} />
+                <img src={decline} className="iconSmall" onClick={this.clearData} />
                 <br/>
                 <h4>Połącz mnie z telefonem nr:</h4>
-                {(id)!==1 ? <Button className="miniButtonek" onClick={() => this.call(id,1)}>1</Button> : null}
+                {(id)!==1 ? <Button className="miniButtonek" onClick={() => this.newCall(id,1)}>1</Button> : null}
                 {(id)!==2 ? <Button className="miniButtonek" onClick={() => this.call(id,2)}>2</Button> : null}
                 {(id)!==3 ? <Button className="miniButtonek" onClick={() => this.call(id,3)}>3</Button> : null}
                 {(id)!==4 ? <Button className="miniButtonek" onClick={() => this.call(id,4)}>4</Button> : null}
-
-
-                <Button onClick={() => this.set1info("BRUM BRUM")}>PRZETESTUJ MNIE</Button>
             </div>
         );
     }
