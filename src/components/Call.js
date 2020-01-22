@@ -17,7 +17,9 @@ export class Call extends React.Component {
         this.set3info = this.set3info.bind(this);
     }
 
-    set1info = (info) => {
+
+
+            set1info = (info) => {
         this.setState({backInfo1: info});
         console.log("jestem tuuu");
     };
@@ -62,7 +64,6 @@ export class Call extends React.Component {
                     {this.state.backInfo3}
                 </div>
                 <br/>
-                <img src={accept} className="iconSmall" onClick={() => this.accept(id)} />
                 <img src={decline} className="iconSmall" onClick={() => this.decline(id)} />
                 <br/>
                 <h4>Połącz mnie z telefonem nr:</h4>

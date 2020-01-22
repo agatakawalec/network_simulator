@@ -8,7 +8,7 @@ export class Main extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            counterUE : 3,
+            counterUE : 4,
             counterBTS : 3
         };
     }
@@ -26,9 +26,6 @@ export class Main extends React.Component {
             <div className="container">
                 <div className="btsHandler">
                     <ArrayOfElements state = {this.state} changeHandler = {this.changeCounterUE} changeHandler2 = {this.changeCounterBTS}/>
-                </div>
-                <div className="buttons">
-                    <Buttons state = {this.state} changeHandler = {this.changeCounterUE} changeHandler2 = {this.changeCounterBTS}/>
                 </div>
             </div>
         );
