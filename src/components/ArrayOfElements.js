@@ -72,7 +72,6 @@ export class ArrayOfElements extends React.Component {
 
         return (
             <div>
-                <h2>Network simulation with Erlang</h2>
                 <Container>
                     <Row>
                         <Col></Col>
@@ -82,7 +81,6 @@ export class ArrayOfElements extends React.Component {
                     <Row>
                         {elements3}
                     </Row>
-
                 </Container>
             </div>
         );

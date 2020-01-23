@@ -1,7 +1,7 @@
 import React from "react";
 import './../App.css';
 import {ArrayOfElements} from "./ArrayOfElements";
-import {Buttons} from "./Buttons";
+import {Container} from "react-grid-system";
 
 
 export class Main extends React.Component {
@@ -24,7 +24,7 @@ export class Main extends React.Component {
     render() {
         return (
             <div className="container">
-                <div className="btsHandler">
+                <div>
                     <ArrayOfElements state = {this.state} changeHandler = {this.changeCounterUE} changeHandler2 = {this.changeCounterBTS}/>
                 </div>
             </div>

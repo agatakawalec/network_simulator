@@ -10,7 +10,7 @@ h2 {
 
 .container {
   flex:1;
-  background-color: #282c34;
+  background-image: url(./assets/papyrus.png);
   height: 100vh;
   position: relative;
 }
@@ -38,8 +38,8 @@ h2 {
 
 .btsHandler {
   display: inline-block;
-  width: 85vw;
-  position: -webkit-sticky;
+  justify-content: center;
+  align-items: center;
 }
 
 .icon {

@@ -23,7 +23,7 @@ export class Call extends React.Component {
     };
 
     newCall = (from, to) => {
-        this.set1info("Telefon łączy się.");
+        this.set1info("Telefon łączy się z " + to);
         fetch('https://localhost:8080/call', {
             method: 'POST',
             headers : {Accept: 'application/json',
@@ -91,9 +91,9 @@ export class Call extends React.Component {
                 <br/>
                 <h4>Połącz mnie z telefonem nr:</h4>
                 {(id)!==1 ? <Button className="miniButtonek" onClick={() => this.newCall(id,1)}>1</Button> : null}
-                {(id)!==2 ? <Button className="miniButtonek" onClick={() => this.call(id,2)}>2</Button> : null}
-                {(id)!==3 ? <Button className="miniButtonek" onClick={() => this.call(id,3)}>3</Button> : null}
-                {(id)!==4 ? <Button className="miniButtonek" onClick={() => this.call(id,4)}>4</Button> : null}
+                {(id)!==2 ? <Button className="miniButtonek" onClick={() => this.newCall(id,2)}>2</Button> : null}
+                {(id)!==3 ? <Button className="miniButtonek" onClick={() => this.newCall(id,3)}>3</Button> : null}
+                {(id)!==4 ? <Button className="miniButtonek" onClick={() => this.newCall(id,4)}>4</Button> : null}
             </div>
         );
     }
